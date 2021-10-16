@@ -1,5 +1,7 @@
 # Plex-Tools
 Plex - Monitoring and Stats
+This is a collection of scripts and services that can be used to monitor the health of Plex Media Server. These scripts are designed to be used in conjunction with [Zabbix](https://www.zabbix.com/).
+
 Monitoring of PLEX application using zabbix or graphane.
 
 ### Monitored
@@ -96,3 +98,27 @@ Github: @nobody3400
 
 # Special Thanks
 - 
+
+## Dependencies
+- A working [Zabbix](https://www.zabbix.com/) install
+- [Python3](https://www.python.org/downloads/)
+- Python dependencies `pip3 install -r requirements.txt`
+- [Tautulli](https://github.com/Tautulli/Tautulli)
+
+## Optional Dependencies
+- [Monit](https://mmonit.com/monit/) if you want to automate crash/unresponsive data gathering
+- [InfluxDB](https://docs.influxdata.com/influxdb/v1.5/introduction/installation/) see [dashboard](#dashboard) for more info.
+- [Grafana](http://docs.grafana.org/installation/) see [dashboard](#dashboard) for more info.
+- [Zabbix plugin for grafana](https://grafana.com/plugins/alexanderzobnin-zabbix-app) see the [dashboard](#dashboard) for more info.
+```
+
+### Triggers
+```
+Plex - HIGH number of websocket messages /s
+Plex - HIGH number of webthreads
+Plex - VERY HIGH number of webthreads
+Plex crash found in crash logs
+Plex UP/DOWN
+Plex - HIGH number of Sync/Conversions
+Plex - Jobs stuck in Sync/Conversions
+Plex - Blacklisted sync detected
